@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <style>
+        div{
+            text-align: center;
+            font-size: 25px;
+        }
+        h3{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Congratulations, <span style="font-weight: bold" th:text="${username}"></span>!</h3>
+        <p>Your email has been verified successfully</p>
+        <a th:href="@{/form/login-register-page}">Go Back to Login page</a>
+    </div>
+</body>
+</html>

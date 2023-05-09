@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Verification</title>
+    <style>
+        div{
+            text-align: center;
+        }
+        h3{
+            font-weight: bold;
+        }
+        body{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Email sent successfully</h3>
+        <p>Dear <span style="font-weight: bold" th:text="${username}"></span>, please check your email to verify your registration</p>
+    </div>
+</body>
+</html>

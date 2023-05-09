@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/registered_users
+    username: root
+    password: rinathajiyev2002
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: haciyev.rinat.2002@gmail.com
+    password: qzyqoysguydqvahg # If you enabled two step verification in your gmail account, you need to require an application-specific password for this
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
