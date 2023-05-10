@@ -23,11 +23,11 @@
 			</div>
 
 			<div class="login">
-				<form>
+				<form th:action="@{/form/authenticate}", th:object="${authRequest}" method="post">
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Login</button>
+					<input type="email" name="email" placeholder="Email" required="" th:field="*{email}">
+					<input type="password" name="pswd" placeholder="Password" required="" th:field="*{password}">
+					<button type="submit">Login</button>
 				</form>
 			</div>
 	</div>
