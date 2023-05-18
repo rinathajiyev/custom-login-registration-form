@@ -56,7 +56,7 @@ public class FormController {
     }
 
     @PostMapping("/register")
-    public ModelAndView register(@ModelAttribute RegisterRequest request,
+    public ModelAndView register(@ModelAttribute("registerRequest") RegisterRequest request,
                                  HttpServletResponse httpResponse,
                                  HttpServletRequest httpRequest)
             throws MessagingException, UnsupportedEncodingException {
