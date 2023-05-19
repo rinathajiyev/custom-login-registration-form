@@ -1,14 +1,10 @@
 package com.darkrinta.service;
 
 import com.darkrinta.dto.*;
-import com.darkrinta.entity.User;
 import com.darkrinta.repository.*;
 import lombok.*;
 import org.springframework.security.authentication.*;
-import org.springframework.security.core.*;
 import org.springframework.stereotype.*;
-
-import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -18,11 +14,24 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public void authenticate(AuthenticationRequest request){
-        Authentication authentication = authenticationManager.authenticate(
+        authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
                         request.getPassword()
                 )
         );
     }
+
+    public void authenticate(PhoneRequest request){
+        var user = userRepository.findByPhone(request.getPhone()).orElseThrow();
+        System.out.println(user.getEmail());
+        System.out.println(user.getPassword());
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        user.getEmail(),
+                        user.getPassword()
+                )
+        );
+    }
+
 }

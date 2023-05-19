@@ -29,5 +29,10 @@ spring:
           starttls:
             enable: true
 
+twilio:
+  account_sid: ACd09b9712f605191f972d48f04dbf7026
+  auth_token: e6e0c2d780c6ed08c749de72911b2229
+  trial_number: +16205298869
+
 
 

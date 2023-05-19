@@ -28,6 +28,7 @@ public class RegisterService {
         var user = User.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
+                .phone(request.getPhone())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
 

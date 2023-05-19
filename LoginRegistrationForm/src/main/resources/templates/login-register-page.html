@@ -11,13 +11,12 @@
 <body>
 	<div class="main">  	
 		<input type="checkbox" id="chk" aria-hidden="true">
-
 			<div class="signup">
 				<form th:action="@{/form/register}" th:object="${registerRequest}" method=post>
 					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="Enter your username" required="" th:field="*{username}">
-					<input type="email" name="email" placeholder="Enter your email" required="" th:field="*{email}">
-<!--					<input type="phone" name="phone" placeholder="Enter international format" required="" th:field="*{phone}">-->
+					<input type="text" name="txt" placeholder="Username" required="" th:field="*{username}">
+					<input type="email" name="email" placeholder="Email" required="" th:field="*{email}">
+					<input type="phone" name="phone" placeholder="Phone (international format)" required="" th:field="*{phone}">
 					<input type="password" name="pswd" placeholder="Password" required="" th:field="*{password}">
 					<button type="submit">Sign up</button>
 				</form>
@@ -29,8 +28,8 @@
 					<input type="email" name="email" placeholder="Email" required="" th:field="*{email}">
 					<input type="password" name="pswd" placeholder="Password" required="" th:field="*{password}">
 					<button type="submit">Login</button>
-					<button type="submit">Forgot Password</button>
 				</form>
+				<a th:href="@{/sms/forgetPassword}">Forgot your password?</a>
 			</div>
 	</div>
 </body>
