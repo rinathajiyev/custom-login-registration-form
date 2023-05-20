@@ -11,9 +11,10 @@
 <body>
 <div class="forMain">
   <div class="signup">
-    <form th:action="@{/sms/newPassword}" method=post>
+    <form th:action="@{/sms/newPassword}" th:object="${smsCode}" method=post>
       <label class="forLabel">Sms Code</label>
-      <input type="text" name="sms" placeholder="Enter sms code" required="">
+      <input type="hidden" name="phone" th:value="${smsCode.getPhone()}" th:field="*{phone}"/>
+      <input type="text" name="sms" placeholder="Enter sms code" required="" th:field="*{smsCode}">
       <button type="submit">Confirm</button>
     </form>
   </div>

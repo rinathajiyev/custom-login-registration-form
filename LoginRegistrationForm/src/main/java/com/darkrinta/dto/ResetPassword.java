@@ -6,7 +6,9 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SmsRequest {
+public class ResetPassword {
+
     private String phone;
-    private String smsCode;
+    private String password;
+    private String confirmPassword;
 }
