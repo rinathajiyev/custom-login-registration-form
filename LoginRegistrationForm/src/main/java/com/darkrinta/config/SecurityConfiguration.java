@@ -27,7 +27,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/form/**", "/sms/**", "/css/**", "/static/**", "/templates/**", "/resources/**")
+                .antMatchers("/form/**", "/sms/**", "/css/**", "/src/main/static/**", "/templates/**", "/resources/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

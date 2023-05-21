@@ -4,6 +4,7 @@ import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.*;
 import io.jsonwebtoken.security.*;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.*;
 
@@ -15,7 +16,8 @@ import java.util.function.*;
 @RequiredArgsConstructor
 public class JwtService {
 
-    private final String secretKey = "472B4B6250655368566D5971337436773979244226452948404D635166546A57";
+    @Value("${application.security.jwt.secret-key}")
+    private String secretKey;
 
     public String extractUsername(String token){
         return extractClaim(token, Claims::getSubject);
